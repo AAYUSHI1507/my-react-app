@@ -53,6 +53,15 @@ function Textform(props) {
     setText("Exception occured");
   }
   };
+  const HandleCopy = ()=>{
+    let text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
+  const handleExtraSpaces =()=>{
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+  }
   const [text, setText] = useState("");
 
   return (
@@ -79,6 +88,12 @@ function Textform(props) {
         </button>
         <button className="btn btn-primary my-2 mx-2" onClick={HandleUpDownClick}>
           Convert to Capitalize
+        </button>
+        <button className="btn btn-primary my-2 mx-2" onClick={HandleCopy}>
+          Copy Text
+        </button>
+        <button className="btn btn-primary my-2 mx-2" onClick={handleExtraSpaces}>
+          Remove Extra Spaces
         </button>
       </div>
       <div className="container my-2">
