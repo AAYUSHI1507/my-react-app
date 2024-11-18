@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useState } from 'react'
-
+//import { useState } from "react";
 
 function Navbar(props) {
   console.log(`This is mode prop ${props.mode}`);
   return (
     <nav
-      className={`navbar navbar-expand-lg bg-${props.mode} border-bottom border-body`} data-bs-theme={props.mode === "dark"?"dark":"light"}
+      className={`navbar navbar-expand-lg bg-${props.mode} border-bottom border-body`}
+      data-bs-theme={props.mode === "dark" ? "dark" : "light"}
     >
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
@@ -48,10 +48,26 @@ function Navbar(props) {
               Search
             </button>
           </form> */}
-            <div className={`form-check form-switch text-${props.mode === "dark"?"light":"dark"}`}>
-    <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"  />
-    <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
-  </div>        </div>
+          <div
+            className={`form-check form-switch text-${
+              props.mode === "dark" ? "light" : "dark"
+            }`}
+          >
+            <input
+              className="form-check-input"
+              type="checkbox"
+              onClick={props.toggleMode}
+              role="switch"
+              id="flexSwitchCheckDefault"
+            />
+            <label
+              className="form-check-label"
+              htmlFor="flexSwitchCheckDefault"
+            >
+              Enable {props.mode === "light" ? "dark" : "light"} Mode
+            </label>
+          </div>{" "}
+        </div>
       </div>
     </nav>
   );

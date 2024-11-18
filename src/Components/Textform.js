@@ -71,6 +71,7 @@ function Textform(props) {
         <div className="mb-3">
           <textarea
             className="form-control"
+            style={{backgroundColor: props.mode === "light"?"grey":"#32363a"}}
             id="myBox"
             onChange={HandleOnChange}
             rows="8"

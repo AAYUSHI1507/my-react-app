@@ -14,9 +14,12 @@ function App() {
   const toggleMode = () => {
     if (mode === "light") {
       setMode('dark');
+      document.body.style.backgroundColor = "#32363a";
       console.log("mode in toggleFuntion",mode);
     } else {
       setMode("light");
+      document.body.style.backgroundColor = "whitesmoke";
+
     }
   };
   return (
@@ -29,7 +32,7 @@ function App() {
         toggleMode={toggleMode}
       />
       <div className="container my-3">
-        <Textform heading="Enter the text to analyze" />
+        <Textform heading="Enter the text to analyze" mode = {mode} />
       </div>
       {/* <About/> */}
     </>
