@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+
 function Textform(props) {
   const HandleOnChange = (event) => {
     console.log("On change");
